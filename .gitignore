@@ -1,1 +1,4 @@
 vito.rrd
+*.png
+lastrun
+script.sh
