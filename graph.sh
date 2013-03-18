@@ -51,13 +51,14 @@ GPRINT:TempATSmax:"Max. %02.1lf Grad C" \
 COMMENT:"\l" \
 COMMENT:"Kesseltemp." \
 GPRINT:TempKTSmin:"Min. %02.1lf Grad C" \
-GPRINT:TempKTSmax:"Max. %02.1lf Grad C"
+GPRINT:TempKTSmax:"Max. %02.1lf Grad C" \
+> /dev/null
 
 cp /usr/share/vito/vito.png /usr/share/nginx/www/
 
-/usr/share/vito/graph12h.sh
-/usr/share/vito/graph6h.sh
-/usr/share/vito/graph2h.sh
-/usr/share/vito/graph7d.sh
+/usr/share/vito/graph12h.sh > /dev/null
+/usr/share/vito/graph6h.sh > /dev/null
+/usr/share/vito/graph2h.sh > /dev/null
+/usr/share/vito/graph7d.sh > /dev/null
 
 date >> /usr/share/vito/lastrun
