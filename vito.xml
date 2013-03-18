@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<vito>
+	<devices>
+		<device ID="2098" name="V200KW2" protocol="KW2"/>
+		<device ID="2053" name="GWG_VBEM" protocol="GWG"/>
+		<device ID="20CB" name="VScotHO1" protocol="KW2"/>
+		<device ID="2094" name="V200KW1" protocol="KW2"/>
+	</devices>
+	<commands>
+		<command name="getTempATS" protocmd="getaddr">
+			<addr>0800</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Aussentemperatur (ATS) in Grad C</description>
+		</command>
+		<command name="getTempKTS" protocmd="getaddr">
+			<addr>0802</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Kesseltemperatur (KTS) in Grad C</description>
+		</command>
+		<command name="getTempKTSoll" protocmd="getaddr">
+			<addr>5502</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Kesselsolltemperatur in Grad C</description>
+		</command>
+		<command name="getTempSTS" protocmd="getaddr">
+			<addr>0804</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Speichertemperatur (STS1) in Grad C</description>
+		</command>
+		<command name="getTempAGTS" protocmd="getaddr">
+			<addr>0808</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Abgastemperatur (AGTS) in Grad C</description>
+		</command>
+		<command name="getTempVLTSM1" protocmd="getaddr">
+			<addr>080C</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Vorlauftemperatur (VLTS) in Grad C</description>
+		</command>
+		<command name="getTempRLTSM1" protocmd="getaddr">
+			<addr>080A</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Rücklauftemperatur (RLTS) in Grad C</description>
+		</command>
+		<command name="getTempVLTSM2" protocmd="getaddr">
+			<addr>3900</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Vorlauftemperatur M2 (VLTSM2) in Grad C</description>
+		</command>
+		<command name="getTempRLTSM2" protocmd="getaddr">
+			<addr>3902</addr>
+			<len>2</len>
+			<unit>UT</unit>
+			<description>Rücklauftemperatur M2 (RLTSM2) in Grad C</description>
+		</command>
+		<command name="getStatusStoerung" protocmd="getaddr">
+			<addr>7579</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Status Sammelstoerung</description>
+			<device ID="2053"/>
+		</command>
+		<command name="getSammelStoerung" protocmd="getaddr">
+			<addr>0847</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Status Sammelstoerung</description>
+		</command>
+		<command name="getBrennerStoerung" protocmd="getaddr">
+			<addr>0883</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Status Brennerstoerung</description>
+		</command>
+		<command name="getBrennerStarts" protocmd="getaddr">
+			<addr>088A</addr>
+			<len>2</len>
+			<unit>CO</unit>
+			<description>Ermittle die Brennerstarts</description>
+			<device ID="2053"/>
+		</command>
+		<command name="getBrennerStunden1" protocmd="getaddr">
+			<addr>08A7</addr>
+			<len>4</len>
+			<unit>CS</unit>
+			<description>Ermittle die Brennerstunden Stufe 1</description>
+		</command>
+		<command name="getBrennerStunden2" protocmd="getaddr">
+			<addr>08AB</addr>
+			<len>4</len>
+			<unit>CS</unit>
+			<description>Ermittle die Brennerstunden Stufe 2</description>
+			<device ID="2053"/>
+		</command>
+		<command name="getBrennerStatus" protocmd="getaddr">
+			<addr>551E</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Ermittle den Brennerstatus</description>
+		</command>
+
+		<command name='getPumpeStatusZirku' protocmd='getaddr'>
+			<addr>0846</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Ermittle den Status der Zirkulationspumpe</description>
+		</command>
+	</commands>
+</vito>

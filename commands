@@ -1,0 +1,16 @@
+getTempATS
+getTempKTS
+getTempKTSoll
+getTempSTS
+getTempAGTS
+getTempVLTSM1
+getTempRLTSM1
+getTempVLTSM2
+getTempRLTSM2
+getSammelStoerung
+getBrennerStoerung
+getBrennerStarts
+getBrennerStunden1
+getBrennerStunden2
+getBrennerStatus
+
