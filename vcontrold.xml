@@ -168,6 +168,19 @@
 			<enum bytes='20 98' text='V200KW2 ID=2098 Protokoll:KW'/>
 			<enum text='UNKNOWN'/>
 		</unit>
+		<unit name='ErrorStateGWG'>
+		   <abbrev>ESG</abbrev>
+		   <type>enum</type>
+		   <enum bytes='00' text='Keine Stoerung'/>
+		   <enum bytes='02' text='Fehler Sicherheitskette'/>
+		   <enum bytes='04' text='Brennerstoerung 04'/>
+		   <enum bytes='05' text='Brennerstoerung 05'/>
+		   <enum bytes='07' text='Brennerstoerung 07'/>
+		   <enum bytes='08' text='Brennerstoerung 09'/>
+		   <enum bytes='08' text='Brennerstoerung 09'/>
+		   <enum bytes='0A' text='Brennerstoerung 10'/>
+		   <enum  text='UNKNOWN'/>
+		</unit>		
 	</units>
 	<protocols>
 		<protocol name='KW2'>
