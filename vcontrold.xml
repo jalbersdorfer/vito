@@ -159,7 +159,15 @@
 			<enum bytes='FE' text='Starkes Stoerfeld (EMV) in der Naehe oder Elektronik defekt'/>
 			<enum bytes='FF' text='Starkes Stoerfeld (EMV) in der Naehe oder interner Fehler'/>
 			<enum text='UNKNOWN'/>
-		</unit>		
+		</unit>
+		<unit name='DeviceType'>
+			<abbrev>DT</abbrev>
+			<type>enum</type>
+			<enum bytes='20 53 01 2B' text='V200WB2 ID=2053 Protokoll:GWG_VBEM'/>
+			<enum bytes='20 94' text='V200KW1 ID=2094 Protokoll:KW'/>
+			<enum bytes='20 98' text='V200KW2 ID=2098 Protokoll:KW'/>
+			<enum text='UNKNOWN'/>
+		</unit>
 	</units>
 	<protocols>
 		<protocol name='KW2'>
