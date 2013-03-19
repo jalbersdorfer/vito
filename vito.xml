@@ -7,6 +7,12 @@
 		<device ID="2094" name="V200KW1" protocol="KW2"/>
 	</devices>
 	<commands>
+		<command name='getDevType' protocmd='getaddr'>
+			<addr>00F8</addr>
+			<len>2</len>
+			<unit>DT</unit>
+			<description>Ermittle Device Typ der Anlage</description>
+		</command>
 		<command name="getTempATS" protocmd="getaddr">
 			<addr>0800</addr>
 			<len>2</len>
@@ -106,12 +112,85 @@
 			<unit>RT</unit>
 			<description>Ermittle den Brennerstatus</description>
 		</command>
-
 		<command name='getPumpeStatusZirku' protocmd='getaddr'>
 			<addr>0846</addr>
 			<len>1</len>
 			<unit>RT</unit>
 			<description>Ermittle den Status der Zirkulationspumpe</description>
+		</command>
+		<command name="getError0" protocmd="getaddr">
+			<addr>7507</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 1</description>
+			<device ID="2053">
+				<addr>3F</addr>
+				<len>1</len>
+				<unit>ESG</unit>
+			</device>
+		</command>
+		<command name="getError1" protocmd="getaddr">
+			<addr>7510</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError2" protocmd="getaddr">
+			<addr>7519</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 3</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError3" protocmd="getaddr">
+			<addr>7522</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 4</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError4" protocmd="getaddr">
+			<addr>752B</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 5</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError5" protocmd="getaddr">
+			<addr>7534</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 6</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError6" protocmd="getaddr">
+			<addr>753D</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 7</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError7" protocmd="getaddr">
+			<addr>7546</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 8</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError8" protocmd="getaddr">
+			<addr>754F</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 9</description>
+			<device ID="2053" />
+		</command>
+		<command name="getError9" protocmd="getaddr">
+			<addr>7558</addr>
+			<len>9</len>
+			<unit>ES</unit>
+			<description>Ermittle Fehlerhistory Eintrag 10</description>
+			<device ID="2053" />
 		</command>
 	</commands>
 </vito>
