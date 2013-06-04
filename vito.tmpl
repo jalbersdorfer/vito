@@ -7,4 +7,5 @@ e="$R14"
 f=${e%.*}
 g="$R15"
 /usr/bin/rrdtool update /usr/share/vito/vito.rrd N:$1:$2:$3:$4:$5:$6:$7:$8:$9:$R10:$R11:$b:$d:$f:$R15
-/usr/share/vito/mailonerror.sh $R10 $R11
+#/usr/share/vito/mailonerror.sh $R10 $R11
+/usr/share/vito/mailonlowtemp.pl $2 $4
