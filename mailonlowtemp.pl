@@ -34,7 +34,7 @@ my $lastmail = 0;
 if (-f $lastmailfile) {
 	$lastmail = stat($lastmailfile)->mtime;
 }
-print sprintf("Lastmail = %d\n", $lastmail);
+
 my $now = time();
 my $sendok = ($now - $lastmail > $mailThreshold) ? 1 : 0;
 if ($sendmail == 1 && $sendok == 1) {
