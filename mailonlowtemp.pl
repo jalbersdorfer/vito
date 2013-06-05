@@ -6,19 +6,27 @@ use warnings;
 use File::stat;
 use Time::localtime;
 
+# === Configuration ===
+my $minKesselTemp = 50.0;
+my $minSpeicherTemp = 40.0;
+my $mailAddress = "jalbersdorfer\@me.com";
+my $mailSubject = "Stoerung im Heizungssystem?!";
+my $mailThreshold = 1 * 60 * 60; # 1 hour
+
+# === Avoid modification below that line ===
 my $temp1 = $ARGV[0];
 my $temp2 = $ARGV[1];
 
 my $sendmail = 0;
 my $message = "";
-if ($temp1 < 50.0) {
+if ($temp1 < $minKesselTemp) {
 	$sendmail = 1;
-	$message = $message . sprintf("Kesseltemperatur ist %f, sollte > 50.0 sein.\n", $temp1);
+	$message = $message . sprintf("Kessel hat %.1f, sollte > %.1f sein.\n", $temp1, $minKesselTemp);
 }
 
-if ($temp2 < 50.0) {
+if ($temp2 < $minSpeicherTemp) {
 	$sendmail = 1;
-	$message = $message . sprintf("Speichertemperatur ist %f, sollte > 50.0 sein.\n", $temp2);
+	$message = $message . sprintf("Speicher hat %.1f, sollte > %.1f sein.\n", $temp2, $minSpeicherTemp);
 }
 
 my $lastmailfile = "/usr/share/vito/lastmail";
@@ -28,16 +36,17 @@ if (-f $lastmailfile) {
 }
 print sprintf("Lastmail = %d\n", $lastmail);
 my $now = time();
-my $sendok = ($now - $lastmail > 3600) ? 1 : 0;
+my $sendok = ($now - $lastmail > $mailThreshold) ? 1 : 0;
 if ($sendmail == 1 && $sendok == 1) {
 	&send_mail(
-	'jalbersdorfer@me.com',
-	'jalbersdorfer@me.com',
-	'jalbersdorfer@me.com',
-	'Stoerung im Heizungssystem?!',
+	$mailAddress,
+	$mailAddress,
+	$mailAddress,
+	$mailSubject,
 	$message
 	);
 
+	# Save time of last mail sent.
 	open (MYFILE, '>'.$lastmailfile);
 	print MYFILE ctime($now);
 	close (MYFILE);
