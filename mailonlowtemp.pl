@@ -7,7 +7,7 @@ use File::stat;
 use Time::localtime;
 
 # === Configuration ===
-my $minKesselTemp = 50.0;
+my $minKesselTemp = 30.0;
 my $minSpeicherTemp = 40.0;
 my $mailAddress = "jalbersdorfer\@me.com";
 my $mailSubject = "Stoerung im Heizungssystem?!";
@@ -21,12 +21,16 @@ my $sendmail = 0;
 my $message = "";
 if ($temp1 < $minKesselTemp) {
 	$sendmail = 1;
-	$message = $message . sprintf("Kessel hat %.1f, sollte > %.1f sein.\n", $temp1, $minKesselTemp);
+	$message = $message . sprintf("Kessel hat %.1f Grad, sollte > %.1f sein.\n", $temp1, $minKesselTemp);
+} else {
+	$message = $message . sprintf("Kessel hat %.1f Grad.\n", $temp1);
 }
 
 if ($temp2 < $minSpeicherTemp) {
 	$sendmail = 1;
-	$message = $message . sprintf("Speicher hat %.1f, sollte > %.1f sein.\n", $temp2, $minSpeicherTemp);
+	$message = $message . sprintf("Speicher hat %.1f Grad, sollte > %.1f sein.\n", $temp2, $minSpeicherTemp);
+} else {
+	$message = $message . sprintf("Speicher hat %.1f Grad.\n", $temp2);
 }
 
 my $lastmailfile = "/usr/share/vito/lastmail";
