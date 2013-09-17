@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <vito>
 	<devices>
-		<device ID="2098" name="V200KW2" protocol="KW2"/>
-		<device ID="2053" name="GWG_VBEM" protocol="GWG"/>
-		<device ID="20CB" name="VScotHO1" protocol="KW2"/>
-		<device ID="2094" name="V200KW1" protocol="KW2"/>
+		<device ID="2098" name="V200KW2" protocol="KW2" />
+		<device ID="2053" name="GWG_VBEM" protocol="GWG" />
+		<device ID="20CB" name="VScotHO1" protocol="KW2" />
+		<device ID="2094" name="V200KW1" protocol="KW2" />
 	</devices>
 	<commands>
-		<command name='getDevType' protocmd='getaddr'>
+		<command name="getDevType" protocmd="getaddr">
 			<addr>00F8</addr>
 			<len>2</len>
 			<unit>DT</unit>
@@ -72,7 +72,7 @@
 			<len>1</len>
 			<unit>RT</unit>
 			<description>Status Sammelstoerung</description>
-			<device ID="2053"/>
+			<device ID="2053" />
 		</command>
 		<command name="getSammelStoerung" protocmd="getaddr">
 			<addr>0847</addr>
@@ -91,7 +91,7 @@
 			<len>2</len>
 			<unit>CO</unit>
 			<description>Ermittle die Brennerstarts</description>
-			<device ID="2053"/>
+			<device ID="2053" />
 		</command>
 		<command name="getBrennerStunden1" protocmd="getaddr">
 			<addr>08A7</addr>
@@ -104,7 +104,7 @@
 			<len>4</len>
 			<unit>CS</unit>
 			<description>Ermittle die Brennerstunden Stufe 2</description>
-			<device ID="2053"/>
+			<device ID="2053" />
 		</command>
 		<command name="getBrennerStatus" protocmd="getaddr">
 			<addr>551E</addr>
@@ -112,7 +112,7 @@
 			<unit>RT</unit>
 			<description>Ermittle den Brennerstatus</description>
 		</command>
-		<command name='getPumpeStatusZirku' protocmd='getaddr'>
+		<command name="getPumpeStatusZirku" protocmd="getaddr">
 			<addr>0846</addr>
 			<len>1</len>
 			<unit>RT</unit>
@@ -190,6 +190,232 @@
 			<len>9</len>
 			<unit>ES</unit>
 			<description>Ermittle Fehlerhistory Eintrag 10</description>
+			<device ID="2053" />
+		</command>
+		<!-- Bedienung (read/write) Heizkreis M1 (Erdgeschoss, Fußbodenheizung) -->
+		<command name="getBetriebArtM1" protocmd="getaddr">
+			<addr>2301</addr>
+			<len>1</len>
+			<unit>BA</unit>
+			<description>Betriebsart M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebArtM1" protocmd="setaddr">
+			<addr>2301</addr>
+			<len>1</len>
+			<unit>BA</unit>
+			<description>Setze Betriebsart M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="getBetriebSparM1" protocmd="getaddr">
+			<addr>2302</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Betriebsart Spar M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebSparM1" protocmd="setaddr">
+			<addr>2302</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Setze Betriebsart Spar M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="getBetriebPartyM1" protocmd="getaddr">
+			<addr>2303</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Betriebsart Party M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebPartyM1" protocmd="setaddr">
+			<addr>2303</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Setze Betriebsart Party M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="getNiveauM1" protocmd="getaddr">
+			<addr>2304</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle Niveau Heizkennlinie M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setNiveauM1" protocmd="setaddr">
+			<addr>2304</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze Niveau Heizkennlinie M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="getNeigungM1" protocmd="getaddr">
+			<addr>2305</addr>
+			<len>1</len>
+			<unit>UN</unit>
+			<description>Ermittle Neigung Heizkennlinie M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setNeigungM1" protocmd="setaddr">
+			<addr>2305</addr>
+			<len>1</len>
+			<unit>UN</unit>
+			<description>Setze Neigung Heizkennlinie M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempRaumNorSollM1" protocmd="getaddr">
+			<addr>2306</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle die Raumsolltemperatur normal M1 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempRaumNorSollM1" protocmd="setaddr">
+			<addr>2306</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Raumsolltemperatur normal M1 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempRaumRedSollM1" protocmd="getaddr">
+			<addr>2307</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle die Raumsolltemperatur reduziert M1 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempRaumRedSollM1" protocmd="setaddr">
+			<addr>2307</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Raumsolltemperatur reduziert M1 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempPartyM1" protocmd="getaddr">
+			<addr>2308</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Solltemperatur Partybetrieb M1</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempPartyM1" protocmd="setaddr">
+			<addr>2308</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Warmwassersolltemperatur Party M1 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<!-- Bedienung (read/write) Heizkreis M2 (1. OG, Radiator, Bad) -->
+		<command name="getBetriebArtM2" protocmd="getaddr">
+			<addr>3301</addr>
+			<len>1</len>
+			<unit>BA</unit>
+			<description>Betriebsart M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebArtM2" protocmd="setaddr">
+			<addr>3301</addr>
+			<len>1</len>
+			<unit>BA</unit>
+			<description>Setze Betriebsart M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getBetriebSparM2" protocmd="getaddr">
+			<addr>3302</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Betriebsart Spar M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebSparM2" protocmd="setaddr">
+			<addr>3302</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Setze Betriebsart Spar M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getBetriebPartyM2" protocmd="getaddr">
+			<addr>3303</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Betriebsart Party M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setBetriebPartyM2" protocmd="setaddr">
+			<addr>3303</addr>
+			<len>1</len>
+			<unit>RT</unit>
+			<description>Setze Betriebsart Party M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getNiveauM2" protocmd="getaddr">
+			<addr>3304</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle Niveau Heizkennlinie M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setNiveauM2" protocmd="setaddr">
+			<addr>3304</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze Niveau Heizkennlinie M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getNeigungM2" protocmd="getaddr">
+			<addr>3305</addr>
+			<len>1</len>
+			<unit>UN</unit>
+			<description>Ermittle Neigung Heizkennlinie M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setNeigungM2" protocmd="setaddr">
+			<addr>3305</addr>
+			<len>1</len>
+			<unit>UN</unit>
+			<description>Setze Neigung Heizkennlinie M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempRaumNorSollM2" protocmd="getaddr">
+			<addr>3306</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle die Raumsolltemperatur normal M2 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempRaumNorSollM2" protocmd="setaddr">
+			<addr>3306</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Raumsolltemperatur normal M2 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempRaumRedSollM2" protocmd="getaddr">
+			<addr>3307</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Ermittle die Raumsolltemperatur reduziert M2 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempRaumRedSollM2" protocmd="setaddr">
+			<addr>3307</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Raumsolltemperatur reduziert M2 in Grad C</description>
+			<device ID="2053" />
+		</command>
+		<command name="getTempPartyM2" protocmd="getaddr">
+			<addr>3308</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Solltemperatur Partybetrieb M2</description>
+			<device ID="2053" />
+		</command>
+		<command name="setTempPartyM2" protocmd="setaddr">
+			<addr>3308</addr>
+			<len>1</len>
+			<unit>ST</unit>
+			<description>Setze die Warmwassersolltemperatur Party M2 in Grad C</description>
 			<device ID="2053" />
 		</command>
 	</commands>
