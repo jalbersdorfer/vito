@@ -61,10 +61,10 @@
 			<type>short</type>
 			<entity>%</entity>
 		</unit>
-		<unit name="CounterS">
+		<unit name='CounterS'> <!-- Sekundenzaeler 4 byte integer -->
 			<abbrev>CS</abbrev>
-			<!--<calc get='V/3600' set='V*3600'/>-->
-			<calc get="V" set="V" />
+			<calc get='V/3600' set='V*3600'/> <!-- Divide by 3600 to get hours -->
+			<!--<calc get='V' set='V'/>-->
 			<type>int</type>
 			<entity>Stunden</entity>
 		</unit>
