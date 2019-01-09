@@ -7,5 +7,15 @@ e="$R14"
 f=${e%.*}
 g="$R15"
 /usr/bin/rrdtool update /usr/share/vito/vito.rrd N:$1:$2:$3:$4:$5:$6:$7:$8:$9:$R10:$R11:$b:$d:$f:$R15
-#/usr/share/vito/mailonerror.sh $R10 $R11
+/usr/share/vito/mailonerror.pl $R10 $R11
 /usr/share/vito/mailonlowtemp.pl $2 $4
+/usr/share/vito/log-burner-hours.pl "$R13" "$R14"
+/usr/share/vito/graphite.pl vito.tempATS $1
+/usr/share/vito/graphite.pl vito.tempKTS $2
+/usr/share/vito/graphite.pl vito.tempKTSoll $3
+/usr/share/vito/graphite.pl vito.tempSTS $4
+/usr/share/vito/graphite.pl vito.tempAGTS $5
+/usr/share/vito/graphite.pl vito.tempVLTSM1 $6
+/usr/share/vito/graphite.pl vito.tempRLTSM1 $7
+/usr/share/vito/graphite.pl vito.tempVLTSM2 $8
+/usr/share/vito/graphite.pl vito.tempTLTSM2 $9
